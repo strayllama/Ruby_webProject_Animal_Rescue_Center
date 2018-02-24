@@ -8,8 +8,8 @@
       <th>Age</th>
       <th>Size</th>
       <th>Sex</th>
-      <th>Location</th>
-      <th>health</th>
+      <th>Reserve</th>
+      <th>Health</th>
     </thead>
     <% @animals.each do |animal| %>
     <tbody>
@@ -18,7 +18,11 @@
       <th><%= animal.age() %></th>
       <th><%= animal.size() %></th>
       <th><%= animal.sex() %></th>
+      <% if (Location.find_id(animal.location_id).name() == "Rescue Center") %>
+      <th> <a class="no_decoration" href="/rescue_center/animals/rehome"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></th>
+      <% else %>
       <th><%= Location.find_id(animal.location_id).name() %></th>
+      <% end %>
       <th><%= animal.health() %>%</th>
     </tbody>
     <% end %>

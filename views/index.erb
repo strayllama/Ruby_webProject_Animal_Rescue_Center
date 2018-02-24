@@ -1,5 +1,4 @@
-</br>
-<section id="home-upper">
+<section>
   <h2>Healthy Animals</h2>
   <% if @healthy_animals.count > 0 %>
   <table>
@@ -16,7 +15,7 @@
       <th><%= animal.species() %></th>
       <th><%= animal.age() %></th>
       <th><%= animal.size() %></th>
-      <th> <input type="button" name="rehome_button" value="CLICK TO REHOME"> </th>
+      <th> <a class="no_decoration" href="/rescue_center/animals/rehome"><input type="button" name="rehome_button" value="CLICK TO REHOME"></a></th>
     </tbody>
     <% end %>
   </table>
@@ -25,7 +24,7 @@
   <% end %>
 </section>
 </br>
-<section id="home-lower">
+<section>
   <h2>Recovering Animals</h2>
   <table>
     <thead>
