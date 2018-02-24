@@ -1,1 +1,22 @@
-<h2>All Locations</h2>
+<section id="home-upper">
+</br>
+<h2>All Reserves</h2>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Land</th>
+      <th>Tree-top</th>
+      <th>Aquatic</th>
+    </thead>
+    <% @locations.each do |location| %>
+    <tbody>
+      <th><%= location.name() %></th>
+      <th><%= location.description() %></th>
+      <th><%= location.land() %></th>
+      <th><%= location.tree_top() %></th>
+      <th><%= location.aquatic() %></th>
+    </tbody>
+    <% end %>
+  </table>
+</section>

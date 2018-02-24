@@ -1,19 +1,25 @@
-</br>
-<section id="home-upper">
+<section>
   <h2>All Animals</h2>
+  </br>
   <table>
     <thead>
       <th>Name</th>
       <th>Species</th>
+      <th>Age</th>
+      <th>Size</th>
+      <th>Sex</th>
       <th>Location</th>
-      <th>Progress</th>
+      <th>health</th>
     </thead>
     <% @animals.each do |animal| %>
     <tbody>
       <th><%= animal.name() %></th>
       <th><%= animal.species() %></th>
+      <th><%= animal.age() %></th>
+      <th><%= animal.size() %></th>
+      <th><%= animal.sex() %></th>
       <th><%= Location.find_id(animal.location_id).name() %></th>
-      <th><%= animal.progress() %></th>
+      <th><%= animal.health() %>%</th>
     </tbody>
     <% end %>
   </table>

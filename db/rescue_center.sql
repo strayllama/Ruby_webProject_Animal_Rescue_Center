@@ -3,10 +3,11 @@ DROP TABLE locations;
 
 CREATE TABLE locations(
   id SERIAL8 primary key,
-  name VARCHAR(255) not null
-  -- land boolean,
-  -- tree_top boolean,
-  -- aquatic boolean
+  name VARCHAR(255) not null,
+  description TEXT,
+  land VARCHAR not null,
+  tree_top VARCHAR not null,
+  aquatic VARCHAR not null
 );
 
 CREATE TABLE animals(
@@ -14,10 +15,10 @@ CREATE TABLE animals(
   name VARCHAR(255),
   species VARCHAR(255) not null,
   admission_date	date not null,
-  progress INT2,
-  location_id	INT8 REFERENCES locations(id)
-  -- age			INT2
-  -- sex			VARCHAR(255)
-  -- size			VARCHAR(255)
-  -- colour		VARCHAR(255)
+  health INT2,
+  location_id	INT8 REFERENCES locations(id),
+  age	VARCHAR(255),
+  sex VARCHAR(255),
+  size VARCHAR(255),
+  colour VARCHAR(255)
 );

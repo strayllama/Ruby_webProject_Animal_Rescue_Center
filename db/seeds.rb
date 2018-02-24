@@ -6,23 +6,87 @@ Animal.delete_all()
 Location.delete_all()
 
 location1 = Location.new(
-  "name" => "Rescue Center")
+  "name" => "Rescue Center",
+  "description" => "Well equipped animal rescue center!",
+  "land" => "yes",
+  "tree_top" => "yes",
+  "aquatic" => "yes")
+
+location2 = Location.new(
+  "name" => "Hilton Tree-tops",
+  "description" => "5 STAR animal retreet! Hidden watching stations amoungst the trees. Many different tree dwelling creatures.",
+  "land" => "yes",
+  "tree_top" => "yes",
+  "aquatic" => "no")
+
+location3 = Location.new(
+  "name" => "Pond life",
+  "description" => "Large deep pond with large complex of island. Great place for animals to relax.",
+  "land" => "yes",
+  "tree_top" => "no",
+  "aquatic" => "yes")
 
 location1.save()
+location2.save()
+location3.save()
 
 animal1 = Animal.new(
   "name" => "Steve",
-  "species" => "Duck",
+  "species" => "Malard Duck",
   "admission_date" => "2018/01/10",
-  "progress" => 70,
-  "location_id" => location1.id())
+  "health" => 70,
+  "location_id" => location1.id(),
+  "age" => "Young",
+  "sex" => "Male",
+  "size" => "Medium",
+  "colour" => "tbc")
 
 animal2 = Animal.new(
   "name" => "Brian",
-  "species" => "Squirrel",
+  "species" => "Gray Squirrel",
   "admission_date" => "2018/02/14",
-  "progress" => 95,
-  "location_id" => location1.id())
+  "health" => 95,
+  "location_id" => location1.id(),
+  "age" => "Old",
+  "sex" => "Male",
+  "size" => "Large",
+  "colour" => "Gray")
+
+animal3 = Animal.new(
+  "name" => "Gill",
+  "species" => "Wood Rat",
+  "admission_date" => "2018/02/20",
+  "health" => 5,
+  "location_id" => location1.id(),
+  "age" => "Old",
+  "sex" => "Female",
+  "size" => "Very Large",
+  "colour" => "Brown")
+
+animal4 = Animal.new(
+  "name" => "Eli",
+  "species" => "Wild Cat",
+  "admission_date" => "2018/01/30",
+  "health" => 100,
+  "location_id" => location1.id(),
+  "age" => "Young",
+  "sex" => "Male",
+  "size" => "Large",
+  "colour" => "Ginger")
+
+animal5 = Animal.new(
+  "name" => "Ted",
+  "species" => "Human Boy",
+  "admission_date" => "2018/02/05",
+  "health" => 100,
+  "location_id" => location1.id(),
+  "age" => "Young",
+  "sex" => "Male",
+  "size" => "Small",
+  "colour" => "Pink")
 
 animal1.save()
 animal2.save()
+animal3.save()
+animal4.save()
+animal5.save()

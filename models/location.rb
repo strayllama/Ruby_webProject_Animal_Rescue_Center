@@ -1,40 +1,44 @@
 require_relative('../db/sql_runner.rb')
 
 class Location
-  attr_reader(:id, :name)
+  attr_reader(:id, :name, :description, :land, :tree_top, :aquatic)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @description = options['description']
+    @land = options['land']
+    @tree_top = options['tree_top']
+    @aquatic = options['aquatic']
   end
 
   def save()
     sql = "INSERT INTO locations(
-          name)
-          VALUES ($1)
+          name, description, land, tree_top, aquatic)
+          VALUES ($1, $2, $3, $4, $5)
           RETURNING *;"
-    values = [@name]
+    values = [@name, @description, @land, @tree_top, @aquatic]
     location = SqlRunner.run(sql, values)[0]
     @id = location['id'].to_i
   end
 
 
+  # CLASS METHODS
 
-# CLASS METHODS
+  def Location.find_id(id)
+    sql = "SELECT * FROM locations WHERE id = $1"
+    values = [id]
+    location_hash = SqlRunner.run(sql, values)[0]
+    location = Location.new(location_hash)
+    return location
+  end
 
-def Location.find_id(id)
-  sql = "SELECT * FROM locations WHERE id = $1"
-  values = [id]
-  location_hash = SqlRunner.run(sql, values)[0]
-  location = Location.new(location_hash)
-  return location
-end
-
-def Location.find_all()
-  sql = "SELECT * FROM locations"
-  animals_array = SqlRunner.run(sql)
-  return animals = animals_array.each {|animal_hash| Animal.new(animal_hash)}
-end
+  def Location.find_all()
+    sql = "SELECT * FROM locations"
+    locations_array = SqlRunner.run(sql)
+    locaitons = locations_array.map {|location_hash| Location.new(location_hash)}
+    return locaitons
+  end
 
   def Location.delete_all()
     sql = "DELETE FROM locations"
