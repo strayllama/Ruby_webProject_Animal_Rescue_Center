@@ -1,0 +1,44 @@
+</br>
+<section id="home-upper">
+  <h2>Healthy Animals</h2>
+  <% if @healthy_animals.count > 0 %>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Location</th>
+      <th>Progress</th>
+    </thead>
+    <% @healthy_animals.each do |animal| %>
+    <tbody>
+      <th><%= animal.name() %></th>
+      <th><%= animal.species() %></th>
+      <th><%= Location.find_id(animal.location_id).name() %></th>
+      <th><%= animal.progress() %></th>
+    </tbody>
+    <% end %>
+  </table>
+  <% else %>
+  <p>There are currently no healthy animals waiting at the center.</p>
+  <% end %>
+</section>
+</br>
+<section id="home-lower">
+  <h2>Recovering Animals</h2>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Location</th>
+      <th>Progress</th>
+    </thead>
+    <% @ill_animals.each do |animal| %>
+    <tbody>
+      <th><%= animal.name %></th>
+      <th><%= animal.species %></th>
+      <th><%= Location.find_id(animal.location_id).name() %></th>
+      <th><%= animal.progress %></th>
+    </tbody>
+    <% end %>
+  </table>
+</section>

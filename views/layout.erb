@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/reset.css'>
+    <link rel="stylesheet" href="/style.css">
+    <title>Appy Critters Rescue Center</title>
+  </head>
+  <body>
+    <header>
+      <a id="top" class="no_decoration nav_links" href="/rescue_center"><img id="logo" src="/logo.png" alt="Appy Critters Logo"></a>
+      <h1>Appy Critters Rescue Center</h1>
+    </header>
+    <nav>
+      <ul class="no_bullets inline">
+        <li>
+          <a class="no_decoration nav_links" href="/rescue_center">MAIN PAGE</a> |
+          <a class="no_decoration nav_links" href="/rescue_center/animals/all">ALL ANIMALS</a> |
+          <a class="no_decoration nav_links" href="/rescue_center/animals/new">ADD NEW ANIMAL</a> |
+          <a class="no_decoration nav_links" href="/rescue_center/locations/all">ALL RESERVES</a> |
+          <a class="no_decoration nav_links" href="/rescue_center/locations/new">ADD NEW RESERVE</a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

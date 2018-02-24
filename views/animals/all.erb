@@ -1,0 +1,20 @@
+</br>
+<section id="home-upper">
+  <h2>All Animals</h2>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Location</th>
+      <th>Progress</th>
+    </thead>
+    <% @animals.each do |animal| %>
+    <tbody>
+      <th><%= animal.name() %></th>
+      <th><%= animal.species() %></th>
+      <th><%= Location.find_id(animal.location_id).name() %></th>
+      <th><%= animal.progress() %></th>
+    </tbody>
+    <% end %>
+  </table>
+</section>

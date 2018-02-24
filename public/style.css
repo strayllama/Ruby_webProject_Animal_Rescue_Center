@@ -1,0 +1,52 @@
+/* style.css for rescue_center.rb */
+* { border:
+  border-style: solid;
+  border-color: red;
+  border-width: thin;}
+
+header.a .h1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+}
+
+.no_decoration {
+  text-decoration:none;}
+
+.no_bullets{
+  list-style-type: none;}
+
+.nav_links:visited{
+  color: rgb(80,80,80);}
+
+.nav_links:active{
+  color: rgb(80,80,80);}
+
+.nav_links:link {
+  color: rgb(80,80,80);}
+
+.nav_links:hover {
+  color: rgb(120,120,120);}
+
+main {
+  border-radius: 5px;
+  border-style: dashed;
+  border-color: black;
+  border-width: thin;
+  margin: 10px;
+  padding: 20px;
+  width: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  }
+
+thead, th {
+  border: 1px solid #CCC;}
+thead {
+  font-weight: bold;}
