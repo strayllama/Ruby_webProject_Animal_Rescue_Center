@@ -11,7 +11,7 @@
     </thead>
     <% @locations.each do |location| %>
     <tbody>
-      <th><%= location.name() %></th>
+      <th> <a class="no_decoration" href="/rescue_center/locations/each/<%= location.id() %>"> <%= location.name() %> </a></th>
       <th><%= location.description() %></th>
       <th><%= location.land() %></th>
       <th><%= location.tree_top() %></th>

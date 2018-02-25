@@ -7,15 +7,15 @@
       <th>Species</th>
       <th>Age</th>
       <th>Size</th>
-      <th>CLICK TO REHOME</th>
+      <th>RE-HOME</th>
     </thead>
     <% @healthy_animals.each do |animal| %>
     <tbody>
-      <th><%= animal.name() %></th>
+      <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
       <th><%= animal.species() %></th>
       <th><%= animal.age() %></th>
       <th><%= animal.size() %></th>
-      <th> <a class="no_decoration" href="/rescue_center/animals/rehome"><input type="button" name="rehome_button" value="CLICK TO REHOME"></a></th>
+      <th> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="CLICK TO RE-HOME"></a></th>
     </tbody>
     <% end %>
   </table>
@@ -25,19 +25,18 @@
 </section>
 </br>
 <section>
-  <h2>Recovering Animals</h2>
+  <h2 class="inline">Recovering Animals</h2>
+  <a class="inline" href="/rescue_center/animals/new"> <input type="button" name="admit" value="Admit New ILL Critter"> </a>
   <table>
     <thead>
       <th>Name</th>
       <th>Species</th>
-      <th>Location</th>
-      <th>health</th>
+      <th>Health Status</th>
     </thead>
     <% @ill_animals.each do |animal| %>
     <tbody>
-      <th><%= animal.name %></th>
+      <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
       <th><%= animal.species %></th>
-      <th><%= Location.find_id(animal.location_id).name() %></th>
       <th><%= animal.health %>%</th>
     </tbody>
     <% end %>

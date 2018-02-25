@@ -1,0 +1,33 @@
+<section>
+  <h2>All Reserves</h2>
+  </br>
+  <table>
+    <thead>
+      <th>FIELD</th>
+      <th>DATA</th>
+    </thead>
+    <tbody>
+      <th>
+        <ul>
+          <li>Name</li>
+          <li>Description</li>
+          <li>Land</li>
+          <li>Tree-top</li>
+          <li>Aquatic</li>
+        </ul>
+      </th>
+      <th>
+        <ul>
+          <li><%= @location.name() %></li>
+          <li><%= @location.description() %></li>
+          <li><%= @location.land() %></li>
+          <li><%= @location.tree_top() %></li>
+          <li><%= @location.aquatic() %></li>
+        </ul>
+      </th>
+      </tbody>
+    </table>
+
+  <a href=""><input type="button" name="update_reserve" value="Click to EDIT"></a>
+  <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
+</section>

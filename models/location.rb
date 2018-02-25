@@ -22,8 +22,21 @@ class Location
     @id = location['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM locations where id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
   # CLASS METHODS
+
+  def Location.rescue_center_id()
+    sql = "SELECT * FROM locations WHERE name = $1"
+    values = ["Rescue Center"]
+    location_hash = SqlRunner.run(sql, values)[0]
+    location = Location.new(location_hash)
+    return location.id()
+  end
 
   def Location.find_id(id)
     sql = "SELECT * FROM locations WHERE id = $1"

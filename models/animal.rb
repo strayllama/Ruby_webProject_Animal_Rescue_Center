@@ -1,4 +1,6 @@
 require_relative('../db/sql_runner.rb')
+require_relative('location.rb')
+
 
 class Animal
   attr_reader(:id, :name, :species, :admission_date, :health,
@@ -28,11 +30,40 @@ class Animal
     @id = animal['id'].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM animals where id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def change_location_id(new_location_id)
+    @location_id = new_location_id.to_i
+  end
+
+  def update()
+    sql = "UPDATE animals SET (
+          name, species, admission_date,
+          health, location_id, age, sex, size, colour)
+          = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+          WHERE id = $10
+          RETURNING *;"
+    values = [@name, @species, @admission_date, @health, @location_id, @age, @sex, @size, @colour, @id]
+    animal = SqlRunner.run(sql, values)[0]
+  end
+
+  def location()
+    sql = "SELECT * FROM locations WHERE id = $1"
+    location_hash = SqlRunner.run(sql, [@location_id])[0]
+    location = Location.new(location_hash)
+    return location
+  end
+
   # CLASS METHODS
 
   def Animal.healthy()
-    sql = "SELECT * FROM animals WHERE health = $1;"
-    values = [100]
+    sql = "SELECT * FROM animals WHERE health = $1 and location_id = $2;"
+    rescue_center_id = Location.rescue_center_id().to_i
+    values = [100, rescue_center_id]
     animals_array = SqlRunner.run(sql, values)
     healthy_animals = animals_array.map {|animal_hash| Animal.new(animal_hash)}
     return healthy_animals
@@ -59,6 +90,12 @@ class Animal
     animals_array = SqlRunner.run(sql)
     animals = animals_array.map {|animal_hash| Animal.new(animal_hash)}
     return animals
+  end
+
+  def Animal.delete(id)
+    sql = "DELETE FROM animals where id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def Animal.delete_all()

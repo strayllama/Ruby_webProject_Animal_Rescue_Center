@@ -1,1 +1,40 @@
+<section>
 <h2>Rehome Animal</h2>
+  </br>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Age</th>
+      <th>Size</th>
+      <th>Gender</th>
+      <th>Colour</th>
+    </thead>
+    <tbody>
+      <th><%= @animal.name() %></th>
+      <th><%= @animal.species() %></th>
+      <th><%= @animal.age() %></th>
+      <th><%= @animal.size() %></th>
+      <th><%= @animal.sex() %></th>
+      <th><%= @animal.colour() %></th>
+    </tbody>
+  </table>
+
+<form class="rehome" action="/rescue_center/animals/rehome" method="post">
+  <p>Choose a new reseve to re-home
+    <select class="id" name="id">
+      <option value="<%= @animal.id() %>"><%= @animal.name() %></option>
+    </select>
+    from the following list:</p>
+  <label for="location">Select a reserve: </label>
+  <select id="location-id" name="location_id">
+    <% @locations.each do |location| %>
+    <option value="<%= location.id() %>" > <%= location.name() %> </option>
+    <% end %>
+  </select>
+
+  </br>
+  <input type="submit" value="Re-home Animal" />
+
+</form>
+</section>

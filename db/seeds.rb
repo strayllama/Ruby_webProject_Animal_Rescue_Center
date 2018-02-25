@@ -85,8 +85,32 @@ animal5 = Animal.new(
   "size" => "Small",
   "colour" => "Pink")
 
+animal6 = Animal.new(
+  "name" => "Freddy",
+  "species" => "Qui Carp",
+  "admission_date" => "2017/11/25",
+  "health" => 100,
+  "location_id" => location3.id(),
+  "age" => "Young",
+  "sex" => "Female",
+  "size" => "Small",
+  "colour" => "Silver")
+
+animal7 = Animal.new(
+  "name" => "Craig",
+  "species" => "Swan",
+  "admission_date" => "2017/12/18",
+  "health" => 100,
+  "location_id" => location3.id(),
+  "age" => "Elderly",
+  "sex" => "Male",
+  "size" => "Medium",
+  "colour" => "White")
+
 animal1.save()
 animal2.save()
 animal3.save()
 animal4.save()
 animal5.save()
+animal6.save()
+animal7.save()

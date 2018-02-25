@@ -1,8 +1,6 @@
 /* style.css for rescue_center.rb */
-* { border:
-  border-style: solid;
-  border-color: red;
-  border-width: thin;}
+
+* { boarder: 1px solid red; }
 
 header.a .h1 {
   display: flex;
@@ -10,6 +8,10 @@ header.a .h1 {
 }
 
 nav {
+}
+
+.inline{
+display: inline-block;
 }
 
 .no_decoration {
@@ -50,3 +52,7 @@ thead, th {
   border: 1px solid #CCC;}
 thead {
   font-weight: bold;}
+
+#location-id {
+  display: hidden;
+}
