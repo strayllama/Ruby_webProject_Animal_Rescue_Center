@@ -15,12 +15,12 @@
     </thead>
     <% @healthy_animals.each do |animal| %>
     <tbody>
-      <th><%= animal.admission_date()%></th>
-      <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
-      <th><%= animal.species() %></th>
-      <th><%= animal.age() %></th>
-      <th><%= animal.size() %></th>
-      <th> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="Send to reserve"></a></th>
+      <td><%= animal.admission_date()%></td>
+      <td> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></td>
+      <td><%= animal.species() %></td>
+      <td><%= animal.age() %></td>
+      <td><%= animal.size() %></td>
+      <td> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="Send to reserve"></a></td>
     </tbody>
     <% end %>
   </table>
@@ -42,12 +42,12 @@
     </thead>
     <% @ill_animals.each do |animal| %>
     <tbody>
-      <th><%= animal.admission_date()%></th>
-      <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
-      <th><%= animal.species %></th>
-      <th><%= animal.age() %></th>
-      <th><%= animal.size() %></th>
-      <th><%= animal.health %>%</th>
+      <td><%= animal.admission_date()%></td>
+      <td> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></td>
+      <td><%= animal.species %></td>
+      <td><%= animal.age() %></td>
+      <td><%= animal.size() %></td>
+      <td><%= animal.health %>%</td>
     </tbody>
     <% end %>
   </table>

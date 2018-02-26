@@ -13,18 +13,18 @@
     </thead>
     <% @animals.each do |animal| %>
     <tbody>
-      <th><%= animal.admission_date()%></th>
-      <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
-      <th><%= animal.species() %></th>
-      <th><%= animal.age() %></th>
-      <th><%= animal.size() %></th>
-      <th><%= animal.sex() %></th>
+      <td><%= animal.admission_date()%></td>
+      <td> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
+      <td><%= animal.species() %></td>
+      <td><%= animal.age() %></td>
+      <td><%= animal.size() %></td>
+      <td><%= animal.sex() %></td>
       <% if (Location.find_id(animal.location_id).name() == "Rescue Center") && (animal.health() == "100") %>
-      <th><a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></th>
+      <td><a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></td>
       <% elsif (Location.find_id(animal.location_id).name() == "Rescue Center") %>
-      <th><%= Location.find_id(animal.location_id).name() %></th>
+      <td><%= Location.find_id(animal.location_id).name() %></td>
       <% else %>
-      <th><%= Location.find_id(animal.location_id).name() %></th>
+      <td><%= Location.find_id(animal.location_id).name() %></td>
       <% end %>
     </tbody>
     <% end %>

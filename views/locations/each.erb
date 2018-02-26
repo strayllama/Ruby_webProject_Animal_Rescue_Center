@@ -1,32 +1,28 @@
 <section>
-  <h2><%= @location.name() %> Reserve</h2>
-
+  <h2>Reserve Profile</h2>
   <table>
-    <thead>
-      <th>FIELD</th>
-      <th>DATA</th>
-    </thead>
-    <tbody>
-      <th>
-        <ul>
-          <li>Name</li>
-          <li>Description</li>
-          <li>Land</li>
-          <li>Tree-top</li>
-          <li>Aquatic</li>
-        </ul>
-      </th>
-      <th>
-        <ul>
-          <li><%= @location.name() %></li>
-          <li><%= @location.description() %></li>
-          <li><%= @location.land() %></li>
-          <li><%= @location.tree_top() %></li>
-          <li><%= @location.aquatic() %></li>
-        </ul>
-      </th>
-      </tbody>
-    </table>
-    <a href="/rescue_center/locations/update/<%= @location.id() %>"><input type="button" name="update_reserve" value="Click to EDIT"></a>
-    <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
+    <tr>
+      <th>Name</th>
+      <td><%= @location.name() %></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><%= @location.description() %></td>
+    </tr>
+    <tr>
+      <th>Caters for Land Animals</th>
+      <td><%= @location.land() %></td>
+    </tr>
+    <tr>
+      <th>Caters for Tree Dwellers</th>
+      <td><%= @location.tree_top() %></td>
+    </tr>
+    <tr>
+      <th>Caters for Aquatic Animals</th>
+      <td><%= @location.aquatic() %></td>
+    </tr>
+  </table>
+
+  <a href="/rescue_center/locations/update/<%= @location.id() %>"><input type="button" name="update_reserve" value="Click to EDIT"></a>
+  <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
 </section>

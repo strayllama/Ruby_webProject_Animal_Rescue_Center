@@ -1,5 +1,5 @@
 <section>
-  <h2>Full Animal Profile</h2>
+  <h2>Animal Profile</h2>
 </br>
 <img src="<%= @animal.name() %>" alt="Photo of <%= @animal.name() %> the <%= @animal.species() %>">
 <table>
@@ -50,7 +50,6 @@
   <% end %>
 
 </table>
-
 
   <a href="/rescue_center/animals/update/<%= @animal.id() %>"><input type="button" name="update_animal" value="Click to EDIT"></a>
   <a href="/rescue_center/animals/check_delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="Click to DELETE"></a>

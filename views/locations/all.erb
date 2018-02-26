@@ -19,16 +19,17 @@
 
     <% if (location.id() == animal.location_id()) %>
       <tbody>
-        <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
-        <th><%= animal.species() %></th>
-        <th><%= animal.age() %></th>
-        <th><%= animal.size() %></th>
-        <th><%= animal.sex() %></th>
-        <th><%= animal.colour() %></th>
+        <td> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></td>
+        <td><%= animal.species() %></td>
+        <td><%= animal.age() %></td>
+        <td><%= animal.size() %></td>
+        <td><%= animal.sex() %></td>
+        <td><%= animal.colour() %></td>
       </tbody>
     <% end %>
   <% end %>
 </table>
+</br>
 <% end %>
 <% end %>
 </section>
