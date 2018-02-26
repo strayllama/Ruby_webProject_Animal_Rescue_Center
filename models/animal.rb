@@ -87,7 +87,21 @@ class Animal
   end
 
   def Animal.find_all()
-    sql = "SELECT * FROM animals"
+    sql = "SELECT * FROM animals ORDER BY admission_date;"
+    animals_array = SqlRunner.run(sql)
+    animals = animals_array.map {|animal_hash| Animal.new(animal_hash)}
+    return animals
+  end
+
+  def Animal.find_all_sort_species()
+    sql = "SELECT * FROM animals ORDER BY species;"
+    animals_array = SqlRunner.run(sql)
+    animals = animals_array.map {|animal_hash| Animal.new(animal_hash)}
+    return animals
+  end
+
+  def Animal.find_all_sort_sex()
+    sql = "SELECT * FROM animals ORDER BY sex;"
     animals_array = SqlRunner.run(sql)
     animals = animals_array.map {|animal_hash| Animal.new(animal_hash)}
     return animals

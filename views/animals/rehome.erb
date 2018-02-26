@@ -29,7 +29,9 @@
   <label for="location">Select a reserve: </label>
   <select id="location-id" name="location_id">
     <% @locations.each do |location| %>
-    <option value="<%= location.id() %>" > <%= location.name() %> </option>
+      <% if location.name() != "Rescue Center" %>
+      <option value="<%= location.id() %>" > <%= location.name() %> </option>
+      <% end %>
     <% end %>
   </select>
 

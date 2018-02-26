@@ -1,44 +1,58 @@
 <section>
   <h2>Full Animal Profile</h2>
 </br>
+<img src="<%= @animal.name() %>" alt="Photo of <%= @animal.name() %> the <%= @animal.species() %>">
 <table>
-  <thead>
-    <th>FIELD</th>
-    <th>DATA</th>
-  </thead>
-  <tbody>
-    <th>
-      <ul>
-        <li>Name:</li>
-        <li>Species:</li>
-        <li>Age:</li>
-        <li>Sex:</li>
-        <li>Size:</li>
-        <li>Colour:</li>
-        <li>Reserve:</li>
-        <li>Health:</li>
-      </ul>
-    </th>
-    <th>
-      <ul>
-        <li><%= @animal.name() %></li>
-        <li><%= @animal.species() %></li>
-        <li><%= @animal.age() %></li>
-        <li><%= @animal.sex() %></li>
-        <li><%= @animal.size() %></li>
-        <li><%= @animal.colour() %></li>
-        <% if (Location.find_id(@animal.location_id).name() == "Rescue Center") && (@animal.health() == "100") %>
-        <li> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= @animal.id() %>"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></li>
-        <% else %>
-        <li><%= Location.find_id(@animal.location_id).name() %></li>
-        <% end %>
-        <li><%= @animal.health()%>%</li>
-      </ul>
-    </th>
-  </tbody>
+  <tr>
+    <th>Name</th>
+    <td><%= @animal.name() %></td>
+  </tr>
+  <tr>
+    <th>Species</th>
+    <td><%= @animal.species() %></td>
+  </tr>
+  <tr>
+    <th>Age</th>
+    <td><%= @animal.age() %></td>
+  </tr>
+  <tr>
+    <th>Sex</th>
+    <td><%= @animal.sex() %></td>
+  </tr>
+
+  <tr>
+    <th>Size</th>
+    <td><%= @animal.size() %></td>
+  </tr>
+
+  <tr>
+    <th>Colour</th>
+    <td><%= @animal.colour() %></td>
+  </tr>
+
+  <% if (Location.find_id(@animal.location_id).name() == "Rescue Center") && (@animal.health() == "100") %>
+  <tr>
+    <th>Location</th>
+    <td>Waiting rehoming - <a class="no_decoration" href="/rescue_center/animals/rehome/<%= @animal.id() %>"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></td>
+  </tr>
+
+  <% elsif (Location.find_id(@animal.location_id).name() == "Rescue Center") && (@animal.health().to_i < 100)%>
+  <tr>
+    <th>Health Percent</th>
+    <td><%= @animal.health() %>%</td>
+  </tr>
+
+  <% else %>
+  <tr>
+    <th>Reserve</th>
+    <td><%= Location.find_id(@animal.location_id).name() %></td>
+  </tr>
+  <% end %>
+
 </table>
 
-<a href="/rescue_center/animals/update/<%= @animal.id() %>"><input type="button" name="update_animal" value="Click to EDIT"></a>
 
-<a href="/rescue_center/animals/check_delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="Click to DELETE"></a>
+  <a href="/rescue_center/animals/update/<%= @animal.id() %>"><input type="button" name="update_animal" value="Click to EDIT"></a>
+  <a href="/rescue_center/animals/check_delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="Click to DELETE"></a>
+
 </section>

@@ -1,9 +1,6 @@
 <section>
   <h2><%= @location.name() %> Reserve</h2>
 
-  <a href="/rescue_center/locations/update/<%= @location.id() %>"><input type="button" name="update_reserve" value="Click to EDIT"></a>
-  <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
-  </br>
   <table>
     <thead>
       <th>FIELD</th>
@@ -30,4 +27,6 @@
       </th>
       </tbody>
     </table>
+    <a href="/rescue_center/locations/update/<%= @location.id() %>"><input type="button" name="update_reserve" value="Click to EDIT"></a>
+    <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
 </section>
