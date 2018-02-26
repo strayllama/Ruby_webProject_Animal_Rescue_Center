@@ -3,6 +3,7 @@
   <% if @healthy_animals.count > 0 %>
   <table>
     <thead>
+      <th>Admission Date</th>
       <th>Name</th>
       <th>Species</th>
       <th>Age</th>
@@ -11,6 +12,7 @@
     </thead>
     <% @healthy_animals.each do |animal| %>
     <tbody>
+      <th><%= animal.admission_date()%></th>
       <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
       <th><%= animal.species() %></th>
       <th><%= animal.age() %></th>
@@ -29,14 +31,20 @@
   <a class="inline" href="/rescue_center/animals/new"> <input type="button" name="admit" value="Admit New ILL Critter"> </a>
   <table>
     <thead>
+      <th>Admission Date</th>
       <th>Name</th>
       <th>Species</th>
+      <th>Age</th>
+      <th>Size</th>
       <th>Health Status</th>
     </thead>
     <% @ill_animals.each do |animal| %>
     <tbody>
+      <th><%= animal.admission_date()%></th>
       <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
       <th><%= animal.species %></th>
+      <th><%= animal.age() %></th>
+      <th><%= animal.size() %></th>
       <th><%= animal.health %>%</th>
     </tbody>
     <% end %>

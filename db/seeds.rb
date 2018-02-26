@@ -1,6 +1,5 @@
 require_relative( "../models/animal.rb" )
 require_relative( "../models/location.rb" )
-require("pry-byebug")
 
 Animal.delete_all()
 Location.delete_all()
@@ -8,23 +7,23 @@ Location.delete_all()
 location1 = Location.new(
   "name" => "Rescue Center",
   "description" => "Well equipped animal rescue center!",
-  "land" => "yes",
-  "tree_top" => "yes",
-  "aquatic" => "yes")
+  "land" => "Yes",
+  "tree_top" => "Yes",
+  "aquatic" => "Yes")
 
 location2 = Location.new(
   "name" => "Hilton Tree-tops",
   "description" => "5 STAR animal retreet! Hidden watching stations amoungst the trees. Many different tree dwelling creatures.",
-  "land" => "yes",
-  "tree_top" => "yes",
-  "aquatic" => "no")
+  "land" => "Yes",
+  "tree_top" => "Yes",
+  "aquatic" => "No")
 
 location3 = Location.new(
   "name" => "Pond life",
   "description" => "Large deep pond with large complex of island. Great place for animals to relax.",
-  "land" => "yes",
-  "tree_top" => "no",
-  "aquatic" => "yes")
+  "land" => "Yes",
+  "tree_top" => "No",
+  "aquatic" => "Yes")
 
 location1.save()
 location2.save()

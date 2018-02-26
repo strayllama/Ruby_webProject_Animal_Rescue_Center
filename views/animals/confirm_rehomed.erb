@@ -1,1 +1,2 @@
 <h2> '<%= @animal.name() %>' the <%= @animal.species %> has been re-homed to Reserve: '<%= Location.find_id(@animal.location_id).name() %>'</h2>
+<a href="/rescue_center/animals/all"><input type="button" name="back" value="Take me back to animal list"></a>

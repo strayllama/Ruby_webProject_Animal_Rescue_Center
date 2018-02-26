@@ -1,1 +1,53 @@
-<h2>Update Animal</h2>
+<h2>Update Animal Status</h2>
+<p>Adjust health level, update size etc.
+</br> Go to main page to re-home animal to a nature reserve.</p>
+<form method="post" action="/rescue_center/animals/update/<%= @animal.id() %>">
+  <label for="name">Name: </label>
+  <input id="name" type="text" name="name" value="<%= @animal.name() %>" required/>
+
+  </br>
+ <label for="health">Healthy Level: </label>
+ <input id="health" type="number" name="health" value="<%= @animal.health() %>" required/>
+
+  </br>
+  <label for="sex">Gender: </label>
+  <input <%= "checked" if @animal.sex == "TBC" %>type="radio" name="sex" value="TBC" checked> TBC</input>
+  <input <%= "checked" if @animal.sex == "Male" %> type="radio" name="sex" value="Male"> Male </input>
+  <input <%= "checked" if @animal.sex == "Female" %>type="radio" name="sex" value="Female"> Female </input>
+
+  </br>
+  <label for="size">Size: </label>
+  <select id="size" name="size" required>
+    <option <%= "selected" if @animal.size == "Small" %> value="Small"> Small </option>
+    <option <%= "selected" if @animal.size == "Medium" %> value="Medium"> Medium </option>
+    <option <%= "selected" if @animal.size == "Large" %> value="Large"> Large </option>
+  </select>
+
+  </br>
+  <label for="colour">Colour: </label>
+  <input id="colour" type="text" name="colour" value="<%= @animal.colour() %>" required/>
+
+  </br>
+  <label for="species">Species</label>
+  <input id="species" type="text" name="species" value="<%= @animal.species() %>" required/>
+
+  </br>
+  <label for="admission-date">Admission Date: </label>
+  <input id="admission-date" type="date" name="admission_date" value="<%= @animal.admission_date() %>" required>
+  </select>
+
+  </br>
+  <label for="age">Age: </label>
+  <select id="age" name="age" required>
+    <option <%= "selected" if @animal.age == "TBC" %> value="tbc"> tbc </option>
+    <option <%= "selected" if @animal.age == "Young" %> value="Young"> Young </option>
+    <option <%= "selected" if @animal.age == "Adult" %> value="Adult"> Adult </option>
+    <option <%= "selected" if @animal.age == "Elderly" %> value="Elderly"> Elderly </option>
+  </select>
+
+  </br>
+  <input id="location-id" name="location_id" type="hidden" value="<%= @animal.location_id() %>"/>
+
+  <input type="submit" value="Update Animal" />
+  <input type="reset">
+</form>

@@ -22,6 +22,16 @@ class Location
     @id = location['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE locations SET(
+          name, description, land, tree_top, aquatic)
+          = ($1, $2, $3, $4, $5)
+          WHERE id = $6
+          RETURNING *;"
+    values = [@name, @description, @land, @tree_top, @aquatic, @id]
+    location = SqlRunner.run(sql, values)[0]
+  end
+
   def delete()
     sql = "DELETE FROM locations where id = $1"
     values = [@id]

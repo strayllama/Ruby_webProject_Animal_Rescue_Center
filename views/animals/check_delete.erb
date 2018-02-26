@@ -1,2 +1,3 @@
 <h2>ARE YOU SURE you want to delete '<%= @animal.name() %>' the <%= @animal.species() %>?</h2>
-<a href="/rescue_center/animals/delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="Click to DELETE"></a>
+    <a href="/rescue_center/animals/delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="YES I WANT TO DELETE"></a>
+    <a href="/rescue_center/animals/all"><input type="button" name="cancel" value="NO! Take me back to animal list"></a>

@@ -1,6 +1,8 @@
 <h2>Admit New Animal</h2>
 
 <form method="post" action="/rescue_center/animals/new">
+  <input type="reset" name="Reset Form"><a href="/rescue_center/animals/all"><input type="button" name="back" value="Take me to animal list"></a>
+  </br>
   <label for="name">Name: </label>
   <input id="name" type="text" name="name" required/>
 
@@ -10,7 +12,7 @@
 
   </br>
   <label for="admission-date">Admission Date: </label>
-  <input id="admission-date" type="date" name="admission_date" required>
+  <input id="admission-date" type="date" name="admission_date" value="<%= Time.now.strftime("%Y-%m-%d") %>" required>
   </select>
 
  </br>
@@ -21,7 +23,7 @@
   <label for="age">Age: </label>
   <select id="age" name="age" required>
     <option value=""> SELECT AGE: </option>
-    <option value="tbc"> tbc </option>
+    <option value="tbc"> TBC </option>
     <option value="Young"> Young </option>
     <option value="Adult"> Adult </option>
     <option value="Elderly"> Elderly </option>
@@ -29,18 +31,10 @@
 
   </br>
   <label for="sex">Gender: </label>
-  <input type="radio" name="sex" value="Male"> Male<br>
-  <input type="radio" name="sex" value="Female"> Female<br>
-  <input type="radio" name="sex" value="TBC" checked> TBC
+  <input type="radio" name="sex" value="TBC" checked> TBC </input>
+  <input type="radio" name="sex" value="Male"> Male </input>
+  <input type="radio" name="sex" value="Female"> Female </input>
 
-<!--  <label for="sex">Sex: </label>
-  <select id="sex" name="sex" required>
-    <option value=""> SELECT SEX: </option>
-    <option value="tbc"> tbc </option>
-    <option value="Male"> Male </option>
-    <option value="Female"> Female </option>
-  </select>
--->
   </br>
   <label for="size">Size: </label>
   <select id="size" name="size" required>
@@ -55,12 +49,7 @@
   <input id="colour" type="text" name="colour" required/>
 
   </br>
-  <label for="location-id">Location: </label>
-  <select id="location-id" name="location_id" required/>
-    <option value="<%= Location.rescue_center_id() %>">Rescue Center</option>
-  </select>
+  <input id="location-id" name="location_id" type="hidden" value="<%= Location.rescue_center_id() %>"/>
 
-  </br>
   <input type="submit" value="Admit Animal" />
-  <input type="reset">
 </form>

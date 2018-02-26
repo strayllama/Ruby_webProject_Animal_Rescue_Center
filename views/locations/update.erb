@@ -1,1 +1,34 @@
 <h2>Update Location</h2>
+<form method="post" action="/rescue_center/locations/update/:id">
+  <label for="name">Name: </label>
+  <input id="name" type="text" name="name" value"<%= @location.name() %>" required/>
+
+</br>
+  <label for="description">Description</label>
+  <input id="description" type="text" name="description" value"<%= @location.description() %>" required/>
+
+</br>
+  <label for="land">Caters for LAND animals: </label>
+  <select id="land" name="land" required>
+    <option <%= "checked" if @location.land() == "Yes" %> value="Yes"> Yes </option>
+    <option <%= "checked" if @location.land() == "No" %> value="No"> No </option>
+  </select>
+
+</br>
+  <label for="tree-top">Caters for TREE animals: </label>
+  <select id="tree-top" name="tree_top" required>
+    <option <%= "checked" if @location.tree_top() == "Yes" %> value="Yes"> Yes </option>
+    <option <%= "checked" if @location.tree_top() == "No" %> value="No"> No </option>
+  </select>
+
+</br>
+  <label for="aquatic">Caters for AQUATIC animals: </label>
+  <select id="aquatic" name="aquatic" required>
+    <option <%= "checked" if @location.aquatic() == "Yes" %> value="yes"> Yes </option>
+    <option <%= "checked" if @location.aquatic() == "No" %> value="no"> No </option>
+  </select>
+
+</br>
+  <input type="submit" value="Update Reserve" />
+
+</form>

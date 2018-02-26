@@ -30,16 +30,6 @@ class Animal
     @id = animal['id'].to_i
   end
 
-  def delete()
-    sql = "DELETE FROM animals where id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
-  def change_location_id(new_location_id)
-    @location_id = new_location_id.to_i
-  end
-
   def update()
     sql = "UPDATE animals SET (
           name, species, admission_date,
@@ -51,12 +41,23 @@ class Animal
     animal = SqlRunner.run(sql, values)[0]
   end
 
+  def delete()
+    sql = "DELETE FROM animals where id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def location()
     sql = "SELECT * FROM locations WHERE id = $1"
     location_hash = SqlRunner.run(sql, [@location_id])[0]
     location = Location.new(location_hash)
     return location
   end
+
+  def change_location_id(new_location_id)
+    @location_id = new_location_id.to_i
+  end
+
 
   # CLASS METHODS
 

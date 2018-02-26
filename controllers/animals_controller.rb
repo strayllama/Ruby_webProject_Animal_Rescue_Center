@@ -39,6 +39,12 @@ get '/rescue_center/animals/update/:id' do
   erb(:"animals/update")
 end
 
+post '/rescue_center/animals/update/:id' do
+  @animal = Animal.new(params)
+  @animal.update()
+  erb(:"animals/confirm_updated")
+end
+
 get '/rescue_center/animals/rehome/:id' do
   @animal = Animal.find_id(params['id'])
   @locations = Location.find_all()
@@ -49,5 +55,5 @@ post '/rescue_center/animals/rehome' do
   @animal = Animal.find_id(params['id'].to_i)
   @animal.change_location_id(params['location_id'])
   @animal.update()
-  erb(:"animals/rehome_confirm")
+  erb(:"animals/confirm_rehomed")
 end

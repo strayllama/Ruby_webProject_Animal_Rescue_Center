@@ -31,6 +31,13 @@ get '/rescue_center/locations/delete/:id' do
   erb(:"locations/confirm_deleted")
 end
 
-get '/rescue_center/locations/update' do
+get '/rescue_center/locations/update/:id' do
+  @location = Location.find_id(params['id'])
   erb(:"locations/update")
+end
+
+post '/rescue_center/animals/update/:id' do
+  @location = Location.new(params)
+  @location.update()
+  erb(:"locations/confirm_updated")
 end
