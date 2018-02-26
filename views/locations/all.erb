@@ -1,22 +1,31 @@
 <section>
 <h2>All Reserves</h2>
 </br>
-  <table>
-    <thead>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Land</th>
-      <th>Tree-top</th>
-      <th>Aquatic</th>
-    </thead>
-    <% @locations.each do |location| %>
-    <tbody>
-      <th> <a class="no_decoration" href="/rescue_center/locations/each/<%= location.id() %>"> <%= location.name() %> </a></th>
-      <th><%= location.description() %></th>
-      <th><%= location.land() %></th>
-      <th><%= location.tree_top() %></th>
-      <th><%= location.aquatic() %></th>
-    </tbody>
+<% @locations.each do |location| %>
+<h3><a class="no_decoration" href="/rescue_center/locations/each/<%= location.id() %>"> <%= location.name() %> </a></h3>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Age</th>
+    <th>Size</th>
+    <th>Gender</th>
+    <th>Colour</th>
+  </thead>
+
+  <% @animals.each do |animal| %>
+
+    <% if (location.id() == animal.location_id()) %>
+      <tbody>
+        <th> <a class="no_decoration" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
+        <th><%= animal.species() %></th>
+        <th><%= animal.age() %></th>
+        <th><%= animal.size() %></th>
+        <th><%= animal.sex() %></th>
+        <th><%= animal.colour() %></th>
+      </tbody>
     <% end %>
-  </table>
+  <% end %>
+</table>
+<% end %>
 </section>

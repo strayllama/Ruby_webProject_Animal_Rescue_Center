@@ -12,7 +12,7 @@ class Animal
     @species = options['species']
     @admission_date = options['admission_date']
     @health = options['health']
-    @location_id = options['location_id']
+    @location_id = options['location_id'].to_i
     @age = options['age']
     @sex = options['sex']
     @size = options['size']

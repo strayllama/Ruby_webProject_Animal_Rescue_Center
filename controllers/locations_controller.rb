@@ -1,10 +1,12 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/location.rb')
+require_relative('../models/animal.rb')
 
 
 get '/rescue_center/locations/all' do
   @locations = Location.find_all()
+  @animals = Animal.find_all()
   erb(:"locations/all")
 end
 
