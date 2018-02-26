@@ -36,7 +36,7 @@ get '/rescue_center/locations/update/:id' do
   erb(:"locations/update")
 end
 
-post '/rescue_center/animals/update/:id' do
+post '/rescue_center/locations/update/:id' do
   @location = Location.new(params)
   @location.update()
   erb(:"locations/confirm_updated")

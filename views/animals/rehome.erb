@@ -1,5 +1,5 @@
 <section>
-<h2>Rehome Animal</h2>
+<h2>Rehome '<%= @animal.name() %>' the <%= @animal.species() %></h2>
   </br>
   <table>
     <thead>
@@ -21,11 +21,11 @@
   </table>
 
 <form class="rehome" action="/rescue_center/animals/rehome" method="post">
-  <p>Choose a new reseve to re-home
-    <select class="id" name="id">
-      <option value="<%= @animal.id() %>"><%= @animal.name() %></option>
-    </select>
-    from the following list:</p>
+
+
+  <p>Choose a Nature Reseve from the following list:</p>
+  <input type="hidden" name="id" value="<%= @animal.id() %>">
+
   <label for="location">Select a reserve: </label>
   <select id="location-id" name="location_id">
     <% @locations.each do |location| %>

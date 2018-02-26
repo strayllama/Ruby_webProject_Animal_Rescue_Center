@@ -3,6 +3,7 @@
 <form method="post" action="/rescue_center/animals/new">
   <input type="reset" name="Reset Form"><a href="/rescue_center/animals/all"><input type="button" name="back" value="Take me to animal list"></a>
   </br>
+  </br>
   <label for="name">Name: </label>
   <input id="name" type="text" name="name" required/>
 
@@ -16,8 +17,8 @@
   </select>
 
  </br>
-  <label for="health">Healthy Level: </label>
-  <input id="health" type="number" name="health" required/>
+  <label for="health">Healthy Percentage: </label>1%
+  <input id="health" name="health" type="range" min="1" max="100" value="50" class="slider">100%
 
  </br>
   <label for="age">Age: </label>

@@ -1,4 +1,7 @@
 <section>
+<h4>Dashboard for Rescue Center</h4>
+<a class="inline" href="/rescue_center/animals/new"> <input type="button" name="admit" value="Admit New ILL Critter"> </a>
+</br></br>
   <h2>Healthy Animals</h2>
   <% if @healthy_animals.count > 0 %>
   <table>
@@ -28,7 +31,6 @@
 </br>
 <section>
   <h2 class="inline">Recovering Animals</h2>
-  <a class="inline" href="/rescue_center/animals/new"> <input type="button" name="admit" value="Admit New ILL Critter"> </a>
   <table>
     <thead>
       <th>Admission Date</th>
