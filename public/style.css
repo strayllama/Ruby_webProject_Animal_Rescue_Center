@@ -78,6 +78,16 @@ a:link {
 a:hover {
   color: var(--red-color);}
 
+a.name_link:visited, a.name_link:active, a.name_link:link
+{
+  color: var(--red-color);
+  /*text-decoration: underline;*/
+}
+
+a.name_link:hover {
+  color: var(--dark-gray-color);
+}
+
 .nav_button {
   font-size: 1em;
   padding: 2px 20px;
