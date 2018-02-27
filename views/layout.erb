@@ -8,20 +8,20 @@
   </head>
   <body>
     <header>
-      <a id="top" class="no_decoration nav_links" href="/rescue_center"><img id="logo" src="/logo.png" alt="Appy Critters Logo"></a>
-      <h1>Appy Critters Rescue Center</h1>
+      <a class="inline vert_middle" href="/rescue_center"><img class="logo inline" src="/logo.png" alt="Appy Critters Logo"></a>
+      <a id="top" class="no_decoration inline vert_middle" href="/rescue_center"><h1 class="title">Appy Critters Rescue Center</h1></a>
     </header>
-    <nav>
-      <ul class="no_bullets inline">
-        <li>
-          <a class="no_decoration nav_links" href="/rescue_center">Rescue Center Dashboad</a>|  |
-          <a class="no_decoration nav_links" href="/rescue_center/animals/all">List All Animals</a>|  |
-          <a class="no_decoration nav_links" href="/rescue_center/locations/all">Show Reserves</a>
-        </li>
-      </ul>
+    <nav class="flex">
+      <a class="no_decoration flex nav_button" href="/rescue_center">Rescue Center Dashboad</a>
+      <a class="no_decoration flex nav_button" href="/rescue_center/animals/all">List All Animals</a>
+      <a class="no_decoration flex nav_button" href="/rescue_center/locations/all">Show Reserves</a>
     </nav>
     <main>
       <%= yield %>
     </main>
+
+    <footer>
+      <a id="goto" href="#top">go to top</a>
+    </footer>
   </body>
 </html>

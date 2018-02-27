@@ -1,5 +1,4 @@
-<section>
-  <h2>All Animals</h2>
+<h1>All Animals</h1>
   </br>
   <table>
     <thead>
@@ -20,7 +19,7 @@
       <td><%= animal.size() %></td>
       <td><%= animal.sex() %></td>
       <% if (Location.find_id(animal.location_id).name() == "Rescue Center") && (animal.health() == "100") %>
-      <td><a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="SEND TO A RESERVE"></a></td>
+      <td><a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input class="rehome_button" type="button" name="rehome_button" value="SEND TO A RESERVE"></a></td>
       <% elsif (Location.find_id(animal.location_id).name() == "Rescue Center") %>
       <td><%= Location.find_id(animal.location_id).name() %></td>
       <% else %>
@@ -29,4 +28,3 @@
     </tbody>
     <% end %>
   </table>
-</section>

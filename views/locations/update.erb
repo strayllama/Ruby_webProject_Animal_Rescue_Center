@@ -1,4 +1,4 @@
-<h2>Update <%= @location.name() %> Reserve</h2>
+<h1>Update <%= @location.name() %> Reserve</h1>
 <form method="post" action="/rescue_center/locations/update/<%= @location.id() %>">
   <label for="name">Name: </label>
   <input id="name" type="text" name="name" value="<%= @location.name() %>" required/>

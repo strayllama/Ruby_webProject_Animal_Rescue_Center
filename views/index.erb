@@ -1,6 +1,5 @@
-<section>
-<h4>Dashboard for Rescue Center</h4>
-<a class="inline" href="/rescue_center/animals/new"> <input type="button" name="admit" value="Admit New ILL Critter"> </a>
+<h1>Dashboard for Rescue Center</h1>
+<a class="inline" href="/rescue_center/animals/new"> <input class="red_button" type="button" name="admit" value="Admit New ILL Critter"> </a>
 </br></br>
   <h2>Healthy Animals</h2>
   <% if @healthy_animals.count > 0 %>
@@ -20,7 +19,7 @@
       <td><%= animal.species() %></td>
       <td><%= animal.age() %></td>
       <td><%= animal.size() %></td>
-      <td> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input type="button" name="rehome_button" value="Send to reserve"></a></td>
+      <td> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input class="rehome_button" type="button" name="rehome_button" value="Send to reserve"></a></td>
     </tbody>
     <% end %>
   </table>
@@ -51,4 +50,3 @@
     </tbody>
     <% end %>
   </table>
-</section>

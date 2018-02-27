@@ -1,10 +1,67 @@
 /* style.css for rescue_center.rb */
 
-/* { border: 1px solid red; }
-*/
+html, body, div, span, object,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, del, dfn, em, img,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, footer, header, hgroup,
+menu, nav, section {
+/*   border: 1px solid red; */
+font-family: Georgia;
+}
 
-.inline{
-display: inline-block;
+:root {
+  --white-color: rgb(255,255,255);
+  --light-gray-color: rgb(209,209,209);
+  --dark-gray-color: rgb(53,50,56);
+  --black-color: rgb(6,7,14);
+  --red-color: rgb(215,46,30);
+  --highlight1-color: rgb(90,125,124);
+  --highlight2-color: rgb(187,190,100);
+}
+
+body {
+  background-color: var(--light-gray-color);
+}
+
+header {
+  background-color: var(--white-color);
+  border-bottom-style: ridge;
+  border-bottom-width: 2px;
+}
+
+h1, h2, h3, h4, th {
+  font-family: Helvetica;
+}
+#top h1:hover {
+  color: var(--dark-gray-color);}
+
+h2{
+  padding: 10px 15px;
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.vert_middle {
+  vertical-align: middle;
+}
+
+.logo {
+  height: 50px;
+  margin: 0px 10px;
+ }
+
+.inline {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
 }
 
 .no_decoration {
@@ -13,31 +70,67 @@ display: inline-block;
   list-style-type: none;}
 
 a:visited{
-  color: rgb(50,50,50);}
+  color: var(--dark-gray-color);}
 a:active{
-  color: rgb(50,50,50);}
+  color: var(--dark-gray-color);}
 a:link {
-  color: rgb(50,50,50);}
+  color: var(--dark-gray-color);}
 a:hover {
-  color: rgb(100,100,100);}
+  color: var(--red-color);}
+
+.nav_button {
+  font-size: 1em;
+  padding: 2px 20px;
+  background-color: var(--white-color);
+  border-style: ridge;
+  border-width: 2px;
+  border-top-style: none;
+}
 
 main {
+  background-color: var(--white-color);
   border-radius: 5px;
   border-style: dashed;
-  border-color: black;
+  border-color: var(--black-color);
   border-width: thin;
-  margin: 10px;
+  margin: 10px 10px 0 10px;
   padding: 20px;
   width: auto;
 }
 
+.red_button {
+  background-color: var(--red-color);
+  margin: 1px 15px;
+}
+
+.red_button:hover {
+  color: var(--light-gray-color);
+}
+
 table {
   width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
   }
-
 thead, th, td {
-  border: 1px solid #CCC;}
+  border: 1px solid var(--dark-gray-color);
+  text-align: center;
+}
 thead, th {
-  font-weight: bold;}
+  font-size: medium;
+  background-color: var(--light-gray-color);
+}
+td {
+  font-size: small;
+  padding: 5px 0;
+}
+
+.rehome_button{
+  padding: -3px 0;
+  background-color: var(--highlight2-color);
+}
+
+#goto {
+  vertical-align: top;
+  color: var(--dark-gray-color);
+  font-size: 0.5em;
+  margin: 0px 20px;
+}
