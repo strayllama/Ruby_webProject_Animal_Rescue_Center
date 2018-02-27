@@ -1,5 +1,6 @@
 <h1>Reserve Profile</h1>
-  <table>
+</br>
+  <table class="table_each">
     <tr>
       <th>Name</th>
       <td><%= @location.name() %></td>
@@ -23,4 +24,5 @@
   </table>
 
   <a href="/rescue_center/locations/update/<%= @location.id() %>"><input type="button" name="update_reserve" value="Click to EDIT"></a>
-  <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
+  <a href="/rescue_center/locations/check_delete/<%= @location.id() %>"><input type="button" name="delete_reserve" value="Click to DELETE"></a>
+  <a href="/rescue_center/locations/all"><input type="button" name="back" value="Go BACK to reserve lists"></a>

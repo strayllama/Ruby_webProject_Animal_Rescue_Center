@@ -1,0 +1,19 @@
+<% if @location.animals.length == 0 %>
+<h2>ARE YOU SURE you want to delete '<%= @location.name() %>'?</h2>
+    <a href="/rescue_center/locations/delete/<%= @location.id() %>"><input type="button" name="delete_location" value="YES I WANT TO DELETE"></a>
+    <a href="/rescue_center/locations/all"><input type="button" name="cancel" value="NO! Take me back to reserve list"></a>
+<% else %>
+<h2>You can not delete this reserve. It has the following animals assigned:</h2>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Species</th>
+  </thead>
+  <% @location.animals.each do |animal| %>
+  <tbody>
+    <td> <a class="name_link" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></th>
+    <td><%= animal.species() %></td>
+  </tbody>
+  <% end %>
+</table>
+<% end %>

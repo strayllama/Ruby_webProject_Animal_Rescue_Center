@@ -1,37 +1,43 @@
 <h1>Add New Reserve</h1>
-<form method="post" action="/rescue_center/locations/new">
-  <label for="name">Name: </label>
-  <input id="name" type="text" name="name" value"type the name" required/>
+<form class="form_add" method="post" action="/rescue_center/locations/new">
 
 </br>
-  <label for="description">Description</label>
-  <input id="description" type="text" name="description" value"type a description" required/>
-
-</br>
-  <label for="land">Caters for LAND animals: </label>
-  <select id="land" name="land" required>
-    <option value=""> SELECT Y/N: </option>
-    <option value="Yes"> Yes </option>
-    <option value="No"> No </option>
-  </select>
-
-</br>
-  <label for="tree-top">Caters for TREE animals: </label>
-  <select id="tree-top" name="tree_top" required>
-    <option value=""> SELECT Y/N: </option>
-    <option value="Yes"> Yes </option>
-    <option value="No"> No </option>
-  </select>
-
-</br>
-  <label for="aquatic">Caters for AQUATIC animals: </label>
-  <select id="aquatic" name="aquatic" required>
-    <option value=""> SELECT Y/N: </option>
-    <option value="Yes"> Yes </option>
-    <option value="No"> No </option>
-  </select>
-
-</br>
-  <input type="submit" value="Add Reserve" />
-
+<table>
+  <tr>
+    <th><label for="name">Name: </label></th>
+    <td><input id="name" type="text" name="name" value"type the name" required/></td>
+  </tr>
+  <tr>
+    <th><label for="description">Description</label></th>
+    <td><textarea id="description" rows="3" cols="60" name="description" value"type a description" required/>
+    </textarea></td>
+  </tr>
+  <tr>
+    <th><label for="land">Caters for LAND animals: </label></th>
+    <td><select id="land" name="land" required>
+          <option value=""> SELECT Y/N: </option>
+          <option value="Yes"> Yes </option>
+          <option value="No"> No </option>
+        </select></td>
+  </tr>
+  <tr>
+    <th><label for="tree-top">Caters for TREE animals: </label></th>
+    <td><select id="tree-top" name="tree_top" required>
+          <option value=""> SELECT Y/N: </option>
+          <option value="Yes"> Yes </option>
+          <option value="No"> No </option>
+        </select></td>
+  </tr>
+  <tr>
+    <th><label for="aquatic">Caters for AQUATIC animals: </label></th>
+    <td><select id="aquatic" name="aquatic" required>
+          <option value=""> SELECT Y/N: </option>
+          <option value="Yes"> Yes </option>
+          <option value="No"> No </option>
+        </select></td>
+  </tr>
+</table>
+<input type="submit" value="Add Reserve" />
+<input type="reset" name="Reset Form">
+<a href="/rescue_center/locations/all"><input type="button" name="back" value="CANCEL - goto reserve list"></a>
 </form>

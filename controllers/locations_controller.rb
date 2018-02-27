@@ -25,6 +25,11 @@ get '/rescue_center/locations/each/:id' do
   erb(:"locations/each")
 end
 
+get '/rescue_center/locations/check_delete/:id' do
+  @location = Location.find_id(params['id'])
+  erb(:"locations/check_delete")
+end
+
 get '/rescue_center/locations/delete/:id' do
   @location = Location.find_id(params['id'])
   @location.delete()

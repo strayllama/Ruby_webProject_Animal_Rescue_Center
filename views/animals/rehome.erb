@@ -11,18 +11,17 @@
       <th>Colour</th>
     </thead>
     <tbody>
-      <th><%= @animal.name() %></th>
-      <th><%= @animal.species() %></th>
-      <th><%= @animal.age() %></th>
-      <th><%= @animal.size() %></th>
-      <th><%= @animal.sex() %></th>
-      <th><%= @animal.colour() %></th>
+      <td><%= @animal.name() %></td>
+      <td><%= @animal.species() %></td>
+      <td><%= @animal.age() %></td>
+      <td><%= @animal.size() %></td>
+      <td><%= @animal.sex() %></td>
+      <td><%= @animal.colour() %></td>
     </tbody>
   </table>
 
+</br>
 <form class="rehome" action="/rescue_center/animals/rehome" method="post">
-
-
   <p>Choose a Nature Reseve from the following list:</p>
   <input type="hidden" name="id" value="<%= @animal.id() %>">
 
@@ -37,6 +36,6 @@
 
   </br>
   <input type="submit" value="Re-home Animal" />
-
+  <a href="/rescue_center/animals/all"><input type="button" name="back" value="CANCEL - goto animal list"></a>
 </form>
 </section>

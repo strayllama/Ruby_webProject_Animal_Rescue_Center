@@ -1,7 +1,7 @@
 <h1>Animal Profile</h1>
 </br>
 <img src="<%= @animal.name() %>" alt="Photo of <%= @animal.name() %> the <%= @animal.species() %>">
-<table>
+<table class="table_each">
   <tr>
     <th>Name</th>
     <td><%= @animal.name() %></td>
@@ -52,3 +52,4 @@
 
 <a href="/rescue_center/animals/update/<%= @animal.id() %>"><input type="button" name="update_animal" value="Click to EDIT"></a>
 <a href="/rescue_center/animals/check_delete/<%= @animal.id() %>"><input type="button" name="delete_animal" value="Click to DELETE"></a>
+<a href="/rescue_center/animals/all"><input type="button" name="back" value="Go BACK to all animal list"></a>

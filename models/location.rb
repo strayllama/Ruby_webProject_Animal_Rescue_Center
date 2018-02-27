@@ -38,6 +38,13 @@ class Location
     SqlRunner.run(sql, values)
   end
 
+  def animals()
+    sql = "SELECT * FROM animals WHERE location_id = $1"
+    animals_hasharray = SqlRunner.run(sql, [@id])
+    animals = animals_hasharray.map { |animal_hash| Animal.new(animal_hash) }
+    return animals
+  end
+
   # CLASS METHODS
 
   def Location.rescue_center_id()

@@ -18,8 +18,8 @@ font-family: Georgia;
   --dark-gray-color: rgb(53,50,56);
   --black-color: rgb(6,7,14);
   --red-color: rgb(215,46,30);
-  --highlight1-color: rgb(90,125,124);
-  --highlight2-color: rgb(187,190,100);
+  --highlight2-color: rgb(90,125,124);
+  --highlight1-color: rgb(187,190,100);
 }
 
 body {
@@ -118,11 +118,14 @@ main {
 }
 
 table {
-  width: 100%;
+  width: auto;
   }
-thead, th, td {
+
+th, td {
   border: 1px solid var(--dark-gray-color);
   text-align: center;
+  vertical-align: middle;
+  padding: 3px 15px;
 }
 thead, th {
   font-size: medium;
@@ -130,13 +133,34 @@ thead, th {
 }
 td {
   font-size: small;
-  padding: 5px 0;
 }
 
 .rehome_button{
-  padding: -3px 0;
   background-color: var(--highlight2-color);
 }
+
+
+.form_add th {
+  background-color: var(--highlight1-color);
+  text-align: right;}
+.form_add td {
+  background-color: var(--highlight2-color);
+  text-align: left;}
+
+.form_update th {
+  background-color: var(--highlight1-color);
+  text-align: right;}
+.form_update td {
+  background-color: var(--highlight2-color);
+  text-align: left;}
+
+.table_each th {
+  background-color: var(--highlight1-color);
+  text-align: right;}
+.table_each td {
+  background-color: var(--highlight2-color);
+  text-align: left;}
+
 
 #goto {
   vertical-align: top;

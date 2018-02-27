@@ -1,56 +1,56 @@
 <h1>Admit New Animal</h1>
-
 <form method="post" action="/rescue_center/animals/new">
-  <input type="reset" name="Reset Form"><a href="/rescue_center/animals/all"><input type="button" name="back" value="Take me to animal list"></a>
-  </br>
-  </br>
-  <label for="name">Name: </label>
-  <input id="name" type="text" name="name" required/>
 
-  </br>
-  <label for="species">Species</label>
-  <input id="species" type="text" name="species" required/>
-
-  </br>
-  <label for="admission-date">Admission Date: </label>
-  <input id="admission-date" type="date" name="admission_date" value="<%= Time.now.strftime("%Y-%m-%d") %>" required>
-  </select>
-
- </br>
-  <label for="health">Healthy Percentage: </label>1%
-  <input id="health" name="health" type="range" min="1" max="100" value="50" class="slider">100%
-
- </br>
-  <label for="age">Age: </label>
-  <select id="age" name="age" required>
-    <option value=""> SELECT AGE: </option>
-    <option value="tbc"> TBC </option>
-    <option value="Young"> Young </option>
-    <option value="Adult"> Adult </option>
-    <option value="Elderly"> Elderly </option>
-  </select>
-
-  </br>
-  <label for="sex">Gender: </label>
-  <input type="radio" name="sex" value="TBC" checked> TBC </input>
-  <input type="radio" name="sex" value="Male"> Male </input>
-  <input type="radio" name="sex" value="Female"> Female </input>
-
-  </br>
-  <label for="size">Size: </label>
-  <select id="size" name="size" required>
-    <option value=""> SELECT SIZE: </option>
-    <option value="Small"> Small </option>
-    <option value="Medium"> Medium </option>
-    <option value="Large"> Large </option>
-  </select>
-
-  </br>
-  <label for="colour">Colour: </label>
-  <input id="colour" type="text" name="colour" required/>
-
-  </br>
+</br>
+<table class="form_add">
+  <tr>
+    <th><label for="name">Name:</label></th>
+    <td><input id="name" type="text" name="name" required/></td>
+  </tr>
+  <tr>
+    <th><label for="species">Species:</label></th>
+    <td><input id="species" type="text" name="species" required/></td>
+  </tr>
+  <tr>
+    <th><label for="admission-date">Admission Date:</label></th>
+    <td><input id="admission-date" type="date" name="admission_date" value="<%= Time.now.strftime("%Y-%m-%d") %>" required></td>
+  </tr>
+  <tr>
+    <th><label for="health">Healthy Percentage:</label></th>
+    <td>1%<input id="health" name="health" type="range" min="1" max="100" value="50" class="slider">100%</td>
+  </tr>
+  <tr>
+    <th><label for="age">Age: </label></th>
+    <td><select id="age" name="age" required>
+          <option value=""> SELECT AGE: </option>
+          <option value="tbc"> TBC </option>
+          <option value="Young"> Young </option>
+          <option value="Adult"> Adult </option>
+          <option value="Elderly"> Elderly </option>
+        </select></td>
+  </tr>
+  <tr>
+    <th> <label for="sex">Gender: </label></th>
+    <td><input type="radio" name="sex" value="TBC" checked> TBC </input>
+        <input type="radio" name="sex" value="Male"> Male </input>
+        <input type="radio" name="sex" value="Female"> Female </input></td>
+  </tr>
+  <tr>
+    <th><label for="size">Size: </label></th>
+    <td><select id="size" name="size" required>
+          <option value=""> SELECT SIZE: </option>
+          <option value="Small"> Small </option>
+          <option value="Medium"> Medium </option>
+          <option value="Large"> Large </option>
+        </select></td>
+  </tr>
+  <tr>
+    <th><label for="colour">Colour: </label></th>
+    <td><input id="colour" type="text" name="colour" required/></td>
+  </tr>
+</table>
   <input id="location-id" name="location_id" type="hidden" value="<%= Location.rescue_center_id() %>"/>
-
-  <input type="submit" value="Admit Animal" />
+  <input type="submit" value="CREATE Animal Profile" />
+  <input type="reset" name="Reset Form">
+  <a href="/rescue_center/animals/all"><input type="button" name="back" value="CANCEL - goto animal list"></a>
 </form>
