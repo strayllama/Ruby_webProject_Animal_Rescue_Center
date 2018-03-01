@@ -10,6 +10,22 @@ get '/rescue_center/animals/all' do
   erb(:"animals/all")
 end
 
+get '/rescue_center/animals/all_by_species' do
+  @animals = Animal.find_all_sort_species()
+  erb(:"animals/all_by_species")
+end
+
+get '/rescue_center/animals/all_by_sex' do
+  @animals = Animal.find_all_sort_sex()
+  erb(:"animals/all_by_sex")
+end
+
+get '/rescue_center/animals/all_by_type' do
+  @animals = Animal.find_all_sort_type()
+  erb(:"animals/all_by_type")
+end
+
+
 get '/rescue_center/animals/new' do
   @terrain_types = Terrain_type.find_all()
   erb(:"animals/new")
@@ -23,7 +39,6 @@ end
 
 get '/rescue_center/animals/each/:id' do
   @animal = Animal.find_id(params['id'])
-  @terrain_types = Terrain_type.find_all()
   erb(:"animals/each")
 end
 
@@ -52,8 +67,8 @@ end
 
 get '/rescue_center/animals/rehome/:id' do
   @animal = Animal.find_id(params['id'])
-  @suitable_locations = @animal.suitable_locations()
   @terrain_types = Terrain_type.find_all()
+  @suitable_locations = @animal.suitable_locations()
   erb(:"animals/rehome")
 end
 

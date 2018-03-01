@@ -14,11 +14,7 @@
     <tbody>
       <td><%= @animal.name() %></td>
       <td><%= @animal.species() %></td>
-      <% @terrain_types.each do | terrain_type | %>
-        <% if (terrain_type.id() == @animal.type_id()) %>
-          <td> <%= terrain_type.terrain() %> </td>
-        <% end %>
-      <% end %>
+      <td><%= Terrain_type.find_id(@animal.type_id).terrain() %></td>
       <td><%= @animal.age() %></td>
       <td><%= @animal.size() %></td>
       <td><%= @animal.sex() %></td>

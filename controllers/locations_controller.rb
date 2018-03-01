@@ -7,7 +7,6 @@ require_relative('../models/animal.rb')
 get '/rescue_center/locations/all' do
   @locations = Location.find_all()
   @animals = Animal.find_all()
-  @terrain_type = Terrain_type.find_all()
   erb(:"locations/all")
 end
 
