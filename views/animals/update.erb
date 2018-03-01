@@ -37,9 +37,9 @@
   </tr>
   <tr>
     <th><label for="type">Type</label></th>
-    <td><select id="type" name="type" required>
+    <td><select id="type" name="type_id" required>
       <% @terrain_types.each do | type | %>
-        <option <%= "selected" if type.id() == @animal.type_id() %> value="<%= type.terrain() %>"> <%= type.terrain() %> </option>
+        <option <%= "selected" if type.id() == @animal.type_id() %> value="<%= type.id() %>"> <%= type.terrain() %> </option>
       <% end %>
         </select></td></tr>
   <tr>

@@ -35,10 +35,15 @@ header {
 h1, h2, h3, h4, th {
   font-family: Helvetica;
 }
+
+h1 {
+  font-weight: bold;
+}
+
 #top h1:hover {
   color: var(--dark-gray-color);}
 
-h2{
+h2 {
   padding: 10px 15px;
 }
 
@@ -111,6 +116,8 @@ main {
 .red_button {
   background-color: var(--red-color);
   margin: 1px 15px;
+  padding: 5px;
+  font-size: 1em;
 }
 
 .red_button:hover {

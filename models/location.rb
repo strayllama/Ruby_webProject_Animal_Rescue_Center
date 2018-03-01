@@ -46,6 +46,35 @@ class Location
     return animals
   end
 
+  def caters_for()
+    string = ""
+    if (@land == "Yes")
+      if (@tree_top == "Yes")
+        if (@aquatic == "Yes")
+          string = "Caters for Land, Tree top and Aquatic animals."
+        else
+          string = "Caters for Land and Tree top animals."
+        end
+      elsif (@aquatic == "Yes")
+        string = "Caters for Land and Aquatic animals."
+      else
+        string = "Caters for Land animals."
+      end
+    else
+      if (@tree_top == "Yes")
+        if (@aquatic == "Yes")
+          string = "Caters for Tree top and Aquatic animals."
+        else
+          string = "Caters for Tree top animals."
+        end
+      else
+        string = "Caters for Aquatic animals."
+      end
+    end
+    
+    return string
+  end
+
   # CLASS METHODS
 
   def Location.rescue_center_id()

@@ -12,11 +12,7 @@
   </tr>
   <tr>
     <th>Terrain Type</th>
-    <% @terrain_types.each do | terrain_type | %>
-      <% if (terrain_type.id() == @animal.type_id()) %>
-        <td> <%= terrain_type.terrain() %> </td>
-      <% end %>
-    <% end %>
+    <td><%= Terrain_type.find_id(@animal.type_id).terrain() %></td>
   </tr>
   <tr>
     <th>Age</th>

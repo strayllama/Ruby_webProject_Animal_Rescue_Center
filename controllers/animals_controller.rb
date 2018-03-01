@@ -7,7 +7,6 @@ require('pry-byebug')
 
 get '/rescue_center/animals/all' do
   @animals = Animal.find_all()
-  @terrain_types = Terrain_type.find_all()
   erb(:"animals/all")
 end
 
