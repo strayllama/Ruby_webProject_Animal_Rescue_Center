@@ -1,4 +1,5 @@
 /* style.css for rescue_center.rb */
+/* reset.css applied first! */
 
 html, body, div, span, object,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -8,9 +9,7 @@ fieldset, form, label,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, footer, header, hgroup,
 menu, nav, section {
-/*   border: 1px solid red; */
-font-family: Georgia;
-}
+font-family: Georgia;}
 
 :root {
   --white-color: rgb(255,255,255);
@@ -19,55 +18,39 @@ font-family: Georgia;
   --black-color: rgb(6,7,14);
   --red-color: rgb(215,46,30);
   --highlight2-color: rgb(90,125,124);
-  --highlight1-color: rgb(187,190,100);
-}
+  --highlight1-color: rgb(187,190,100);}
 
 body {
-  background-color: var(--light-gray-color);
-}
+  background-color: var(--light-gray-color);}
 
 header {
   background-color: var(--white-color);
   border-bottom-style: ridge;
-  border-bottom-width: 2px;
-}
+  border-bottom-width: 2px;}
 
 h1, h2, h3, h4, th {
-  font-family: Helvetica;
-}
-
+  font-family: Helvetica;}
 h1 {
-  font-weight: bold;
-}
-
+  font-weight: bold;}
 #top h1:hover {
   color: var(--dark-gray-color);}
-
 h2 {
-  padding: 10px 15px;
-}
+  padding: 10px 15px;}
 
 .title {
   font-size: 1.8em;
-  font-weight: bold;
-}
-.vert_middle {
-  vertical-align: middle;
-}
-
+  font-weight: bold;}
 .logo {
   height: 50px;
-  margin: 0px 10px;
- }
+  margin: 0px 10px;}
 
+.vert_middle {
+  vertical-align: middle;}
 .inline {
-  display: inline-block;
-}
-
+  display: inline-block;}
 .flex {
   display: flex;
-  justify-content: space-around;
-}
+  justify-content: space-around;}
 
 .no_decoration {
   text-decoration:none;}
@@ -83,24 +66,10 @@ a:link {
 a:hover {
   color: var(--red-color);}
 
-a.name_link:visited, a.name_link:active, a.name_link:link
-{
-  color: var(--red-color);
-  /*text-decoration: underline;*/
-}
-
+a.name_link:visited, a.name_link:active, a.name_link:link {
+  color: var(--red-color);}
 a.name_link:hover {
-  color: var(--dark-gray-color);
-}
-
-.nav_button {
-  font-size: 1em;
-  padding: 2px 20px;
-  background-color: var(--white-color);
-  border-style: ridge;
-  border-width: 2px;
-  border-top-style: none;
-}
+  color: var(--dark-gray-color);}
 
 main {
   background-color: var(--white-color);
@@ -110,42 +79,37 @@ main {
   border-width: thin;
   margin: 10px 10px 0 10px;
   padding: 20px;
-  width: auto;
-}
+  width: auto;}
 
+.nav_button {
+  font-size: 1em;
+  padding: 2px 20px;
+  background-color: var(--white-color);
+  border-style: ridge;
+  border-width: 2px;
+  border-top-style: none;}
 .red_button {
   background-color: var(--red-color);
   margin: 1px 15px;
   padding: 5px;
-  font-size: 1em;
-}
-
+  font-size: 1em;}
 .red_button:hover {
-  color: var(--light-gray-color);
-}
+  color: var(--light-gray-color);}
+.rehome_button{
+  background-color: var(--highlight2-color);}
 
 table {
-  width: auto;
-  }
-
+  width: auto;}
 th, td {
   border: 1px solid var(--dark-gray-color);
   text-align: center;
   vertical-align: middle;
-  padding: 3px 15px;
-}
+  padding: 3px 15px;}
 thead, th {
   font-size: medium;
-  background-color: var(--light-gray-color);
-}
+  background-color: var(--light-gray-color);}
 td {
-  font-size: small;
-}
-
-.rehome_button{
-  background-color: var(--highlight2-color);
-}
-
+  font-size: small;}
 
 .form_add th {
   background-color: var(--highlight1-color);
@@ -168,10 +132,8 @@ td {
   background-color: var(--highlight2-color);
   text-align: left;}
 
-
 #goto {
   vertical-align: top;
   color: var(--dark-gray-color);
   font-size: 0.5em;
-  margin: 0px 20px;
-}
+  margin: 0px 20px;}

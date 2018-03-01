@@ -77,16 +77,16 @@ animal2 = Animal.new(
   "colour" => "Gray")
 
 animal3 = Animal.new(
-  "name" => "Gill",
-  "species" => "Wood Rat",
+  "name" => "Danger",
+  "species" => "Mouse",
   "type_id" => terrain_type2.id(),
   "admission_date" => "2018/02/20",
   "health" => 5,
   "location_id" => location1.id(),
   "age" => "Old",
-  "sex" => "Female",
-  "size" => "Very Large",
-  "colour" => "Brown")
+  "sex" => "Male",
+  "size" => "Small",
+  "colour" => "White")
 
 animal4 = Animal.new(
   "name" => "Eli",

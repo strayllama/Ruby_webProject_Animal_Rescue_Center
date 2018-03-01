@@ -1,6 +1,5 @@
 require('sinatra')
-#require('sinatra/contrib/all')
-#require('pry-byebug')
+require('sinatra/contrib/all')
 require_relative('controllers/animals_controller.rb')
 require_relative('controllers/locations_controller.rb')
 require_relative('models/animal.rb')
@@ -10,6 +9,3 @@ get '/rescue_center' do
   @ill_animals = Animal.ill()
   erb(:index)
 end
-
-
-#pry.binding
