@@ -12,6 +12,14 @@
     <td><input id="species" type="text" name="species" required/></td>
   </tr>
   <tr>
+    <th><label for="type">Terrain Type: </label></th>
+    <td><select id="type" name="type_id" required>
+    <% @terrain_types.each do | type | %>
+      <option value="<%= type.id() %>"> <%= type.terrain() %> </option>
+    <% end %>
+    </select></td>
+  </tr>
+  <tr>
     <th><label for="admission-date">Admission Date:</label></th>
     <td><input id="admission-date" type="date" name="admission_date" value="<%= Time.now.strftime("%Y-%m-%d") %>" required></td>
   </tr>

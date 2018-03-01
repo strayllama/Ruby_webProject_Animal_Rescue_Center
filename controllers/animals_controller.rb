@@ -1,14 +1,18 @@
 require('sinatra')
-require('sinatra/contrib/all')
+#require('sinatra/contrib/all')
 require_relative('../models/animal.rb')
 require_relative('../models/location.rb')
+require_relative('../models/terrain_type.rb')
+require('pry-byebug')
 
 get '/rescue_center/animals/all' do
   @animals = Animal.find_all()
+  @terrain_types = Terrain_type.find_all()
   erb(:"animals/all")
 end
 
 get '/rescue_center/animals/new' do
+  @terrain_types = Terrain_type.find_all()
   erb(:"animals/new")
 end
 
@@ -20,6 +24,7 @@ end
 
 get '/rescue_center/animals/each/:id' do
   @animal = Animal.find_id(params['id'])
+  @terrain_types = Terrain_type.find_all()
   erb(:"animals/each")
 end
 
@@ -36,6 +41,7 @@ end
 
 get '/rescue_center/animals/update/:id' do
   @animal = Animal.find_id(params['id'])
+  @terrain_types = Terrain_type.find_all()
   erb(:"animals/update")
 end
 
@@ -47,7 +53,8 @@ end
 
 get '/rescue_center/animals/rehome/:id' do
   @animal = Animal.find_id(params['id'])
-  @locations = Location.find_all()
+  @suitable_locations = @animal.suitable_locations()
+  @terrain_types = Terrain_type.find_all()
   erb(:"animals/rehome")
 end
 

@@ -8,6 +8,7 @@
       <th>Admission Date</th>
       <th>Name</th>
       <th>Species</th>
+      <th>Terrain Type</th>
       <th>Age</th>
       <th>Size</th>
       <th>RE-HOME</th>
@@ -17,6 +18,11 @@
       <td><%= animal.admission_date()%></td>
       <td> <a class="name_link" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></td>
       <td><%= animal.species() %></td>
+      <% @terrain_types.each do | terrain_type | %>
+        <% if (terrain_type.id() == animal.type_id()) %>
+          <td> <%= terrain_type.terrain() %> </td>
+        <% end %>
+      <% end %>
       <td><%= animal.age() %></td>
       <td><%= animal.size() %></td>
       <td> <a class="no_decoration" href="/rescue_center/animals/rehome/<%= animal.id() %>"><input class="rehome_button" type="button" name="rehome_button" value="Send to reserve"></a></td>
@@ -35,6 +41,7 @@
       <th>Admission Date</th>
       <th>Name</th>
       <th>Species</th>
+      <th>Terrain Type</th>
       <th>Age</th>
       <th>Size</th>
       <th>Health Status</th>
@@ -44,6 +51,11 @@
       <td><%= animal.admission_date()%></td>
       <td> <a class="name_link" href="/rescue_center/animals/each/<%= animal.id() %>"> <%= animal.name() %> </a></td>
       <td><%= animal.species %></td>
+      <% @terrain_types.each do | terrain_type | %>
+        <% if (terrain_type.id() == animal.type_id()) %>
+          <td> <%= terrain_type.terrain() %> </td>
+        <% end %>
+      <% end %>
       <td><%= animal.age() %></td>
       <td><%= animal.size() %></td>
       <td><%= animal.health %>%</td>

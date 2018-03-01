@@ -1,5 +1,5 @@
 require('sinatra')
-require('sinatra/contrib/all')
+#require('sinatra/contrib/all')
 require_relative('../models/location.rb')
 require_relative('../models/animal.rb')
 

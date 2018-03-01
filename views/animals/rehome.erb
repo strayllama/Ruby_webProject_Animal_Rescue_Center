@@ -5,6 +5,7 @@
     <thead>
       <th>Name</th>
       <th>Species</th>
+      <th>Terrain Type</th>
       <th>Age</th>
       <th>Size</th>
       <th>Gender</th>
@@ -13,6 +14,11 @@
     <tbody>
       <td><%= @animal.name() %></td>
       <td><%= @animal.species() %></td>
+      <% @terrain_types.each do | terrain_type | %>
+        <% if (terrain_type.id() == @animal.type_id()) %>
+          <td> <%= terrain_type.terrain() %> </td>
+        <% end %>
+      <% end %>
       <td><%= @animal.age() %></td>
       <td><%= @animal.size() %></td>
       <td><%= @animal.sex() %></td>
@@ -27,10 +33,8 @@
 
   <label for="location">Select a reserve: </label>
   <select id="location-id" name="location_id">
-    <% @locations.each do |location| %>
-      <% if location.name() != "Rescue Center" %>
+    <% @suitable_locations.each do |location| %>
       <option value="<%= location.id() %>" > <%= location.name() %> </option>
-      <% end %>
     <% end %>
   </select>
 

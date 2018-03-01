@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('animal.rb')
 
 class Location
   attr_reader(:id, :name, :description, :land, :tree_top, :aquatic)
@@ -66,8 +67,8 @@ class Location
   def Location.find_all()
     sql = "SELECT * FROM locations"
     locations_array = SqlRunner.run(sql)
-    locaitons = locations_array.map {|location_hash| Location.new(location_hash)}
-    return locaitons
+    locations = locations_array.map {|location_hash| Location.new(location_hash)}
+    return locations
   end
 
   def Location.delete_all()

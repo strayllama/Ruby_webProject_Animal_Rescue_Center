@@ -36,6 +36,13 @@
     <td><input id="species" type="text" name="species" value="<%= @animal.species() %>" required/></td>
   </tr>
   <tr>
+    <th><label for="type">Type</label></th>
+    <td><select id="type" name="type" required>
+      <% @terrain_types.each do | type | %>
+        <option <%= "selected" if type.id() == @animal.type_id() %> value="<%= type.terrain() %>"> <%= type.terrain() %> </option>
+      <% end %>
+        </select></td></tr>
+  <tr>
     <th><label for="age">Age: </label></th>
     <td><select id="age" name="age" required>
           <option <%= "selected" if @animal.age == "TBC" %> value="tbc"> tbc </option>
