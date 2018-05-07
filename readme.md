@@ -1,10 +1,10 @@
 # Project 1 - Programming & Web Fundamentals
 ## Will consolidate:
-*Ruby fundamentals
-*TDD (where appropriate)
-*OOP
-*Web Programming ( REST/MVC )
-*Databases with CRUD actions
+* Ruby fundamentals
+* TDD (where appropriate)
+* OOP
+* Web Programming ( REST/MVC )
+* Databases with CRUD actions
 
 ## MVP - SPEC was adjusted to my project:
 ### Project TITLE: Animal Rescue Center
